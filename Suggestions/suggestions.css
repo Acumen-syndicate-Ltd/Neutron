@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+/*  General styles */
+body{
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+.main{
+  width: 1200px;
+  display: block;
+  background-color: #9c2020;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.section-title{
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin: 0;
+  font-size: 70px;
+  font-family: San Francisco, Ubuntu, Arial, Sans-serif;
+  width: 100%;
+  text-align: center;
+  color: white;
+
+}
+#page-title{
+  font-size: 100px;
+  font-weight: bold;
+  font-family: futura heavy, San Francisco, Arial, sans-serif;
+  width: 100%;
+  text-align: center;
+  color: #9c2020;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Quick select styles */
+#quick-select{
+  width: 1200px;
+  margin: auto;
+}
+.sub-quick-select{
+  width: 49%;
+  display: inline-block;
+  background-color: white;
+  border: 5px solid #9c2020;
+  border-radius: 20px;
+  vertical-align: top;
+  height: 425px;
+}
+.sub-quick-select p{
+  width: 100%;
+  text-align: center;
+  font-family: San Francisco, Ubuntu, Arial, Sans-serif;
+  color: #9c2020;
+  font-size: 40px;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  text-decoration: underline;
+}
+.sub-quick-select ul{
+  padding-top: 0;
+  padding-bottom: 15px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  text-align: center;
+  list-style-type: none;
+  font-family: Ubuntu, San Francisco, arial, sans-serif;
+  font-size: 15px;
+}
+.sub-quick-select a{
+  color: #9c2020;
+  text-decoration: none;
+}
+
+/* Written content styles */
+.written{
+  color: white;
+  font-family: Ubuntu, San Francisco, Arial, Sans-serif;
+  font-size: 30px;
+  margin-left: 10px;
+}
+.written a{
+  color: #9c2020;
+  text-decoration: none;
+  text-shadow: 0 0 10px white,
+  0 0 10px white,
+  0 0 10px white,
+  0 0 10px white;
+}
+.main ul{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 50px;
+  margin-top: 0;
+}
+.written li{
+  line-height: auto;
+  margin-bottom: 30px;
+}
+
+/* Selection styles */
+#page-title::selection,  #quick-select a::selection{
+  color: white;
+  background-color: #9c2020;
+}
+.written li span::selection, .written li a::selection, .written li::selection, #quick-select::selection, .section-title::selection{
+  background-color: white;
+  color: #9c2020;
+}

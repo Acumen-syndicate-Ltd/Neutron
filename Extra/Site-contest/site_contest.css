@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+
+/* General styles */
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header footer styles */
+
+
+/* Page title styles */
+#site-title{
+  display: block;
+  text-decoration: none;
+  font-family: futura heavy, Arial;
+  font-size: 40px;
+  color: #323643;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  padding: 15px 0;
+  margin: 0;
+}
+#site-title::selection{
+  background-color: #323643;
+  color: #F7F7F7;
+}
+aside{
+  background-color: #F7F7F7;
+}
+
+/* Navigation bar styles */
+#header a:visited {
+   color: #F7F7F7;
+  font-weight: bold;
+  text-decoration: underline wavy;
+}
+#header a:hover{
+  color: #323643;
+  background-color: #323643;
+  text-shadow: 2px 0 #F7F7F7,
+               -2px 0 #F7F7F7,
+               0 2px #F7F7F7,
+               0 -2px #F7F7F7,
+               2px 2px #F7F7F7,
+              -2px 2px #F7F7F7,
+               2px 2px #F7F7F7,
+               2px -2px #F7F7F7,
+               2px -2px #F7F7F7,
+              -2px -2px #F7F7F7,
+               -2px 2px #F7F7F7,
+               -2px -2px #F7F7F7;
+
+}
+#header a{
+  float: left;
+  text-align: center;
+  padding: 7px;
+  font-size: 200%;
+  text-decoration: none;
+  color: #606470;
+  font-weight: bold;
+}
+#header li{
+  display: inline-block;
+  padding-left: auto;
+  padding-right: auto;
+}
+#header {
+  width: 100%;
+  z-index: 20;
+  background-color: #323643;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  font-family: futura heavy, Arial;
+  height: 51px;
+}
+#header a::selection{
+  background-color: #F7F7F7;
+  color: #323643;
+}
+#header::selection{
+  background-color: #F7F7F7;
+  color: #323643;
+}
+
+/* Footer general styles */
+footer{
+  background-color: #323643;
+  font-family: futura heavy, Arial;
+}
+footer .container {
+  display: flex;
+  height: 200px;
+}
+footer .column {
+  width: 33%;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+/* Niche footer styles */
+footer .column img {
+  height: 80%;
+  margin: 0 30%;
+}
+footer .column a{
+  color: #F7F7F7;
+  display: block;
+}
+footer .column a:hover{
+  text-shadow: 0 0 5px #F7F7F7;
+}
+footer .column a:active{
+  text-shadow: 0 0 5px #F7F7F7,
+  0 0 5px #F7F7F7;
+}
+footer .column p {
+  color: #F7F7F7;
+  font-size: 20px;
+  font-family: futura heavy, Arial;
+  font-weight: bold;
+  text-align: left;
+}
+footer a::selection, footer p::selection, footer::selection, footer br::selection{
+  background-color: #F7F7F7;
+  color: #323643;
+}
+footer img::selection{
+  background-color: white;
+}

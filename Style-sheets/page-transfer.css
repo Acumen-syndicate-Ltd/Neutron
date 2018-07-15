@@ -1,0 +1,26 @@
+/* Next page transfer styles */
+#next-page{
+  color: #9c2020;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+  font-family: Ubuntu, San Francisco, Arial;
+  font-size: 5vw;
+}
+#next-page a{
+  color: #9c2020;
+}
+#next-page a::selection{
+  background-color: #9c2020;
+  color: white;
+}
+#next-page a:visited{
+  color: inherit;
+}
+#next-page a:hover{
+  color: white;
+  text-shadow: 0 8px 10px #9c2020,
+               0 0 10px #9c2020,
+               0 0 10px #9c2020;
+  text-decoration: none;
+}

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+/* General styles */
+body{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+/* Row styles */
+.layout{
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
+
+/* Board styles */
+.content-board{
+  width: 90%;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.content-board:hover{
+  box-shadow: 5px 10px 10px rgba(0,0,0,.3);
+}
+.keys{
+  background-color: #a3a3a3;
+  font-family: ubuntu;
+  padding-bottom: 15px;
+}
+.content-board .function{
+  padding: 0;
+  padding-bottom: 5px;
+  margin: 0;
+  text-align: center;
+  color: white;
+  border: 10px solid black;
+  border-radius: 15px 15px 0 0;
+  background-color: black;
+  font-family: Ubuntu, san francisco, Arial;
+  font-size: 30px;
+}
+.content-board .numerical{
+  width: 100%;
+  margin-left: 65px;
+  padding-top: 10px;
+  margin-top: 0;
+  color: white;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000, 0px 1px 0 #000, 0px -1px 0 #000, -1px 0px 0 #000, 1px 0px 0 #000, 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000, 0px 2px 0 #000, 0px -2px 0 #000,-2px 0px 0 #000, 2px 0px 0 #000, 1px 2px 0 #000,-1px 2px 0 #000, 1px -2px 0 #000, -1px -2px 0 #000, 2px 1px 0 #000, -2px 1px 0 #000, 2px -1px 0 #000, -2px -1px 0 #000;
+}
+.content-board .summary{
+  width: 90%;
+  margin: auto;
+  font-size: 25px;
+  color: white;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000, 0px 1px 0 #000, 0px -1px 0 #000, -1px 0px 0 #000, 1px 0px 0 #000, 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000, 0px 2px 0 #000, 0px -2px 0 #000,-2px 0px 0 #000, 2px 0px 0 #000, 1px 2px 0 #000,-1px 2px 0 #000, 1px -2px 0 #000, -1px -2px 0 #000, 2px 1px 0 #000, -2px 1px 0 #000, 2px -1px 0 #000, -2px -1px 0 #000;
+}
+.content-board .description{
+  width: 90%;
+  margin: auto;
+  font-size: 20px;
+  color: black;
+}
+
+/* Fixed scrolling attempt */
+.update-name, .date, .summary, .description{
+  display: block;
+  font-family: ubuntu, san francisco, Ariel, sans-serif;
+}
+.update-name{
+  font-size: 30px;
+  font-family: ubuntu;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 0 #9c2020, -1px 1px 0 #9c2020, 1px -1px 0 #9c2020, -1px -1px 0 #9c2020, 0px 1px 0 #9c2020, 0px -1px 0 #9c2020, -1px 0px 0 #9c2020, 1px 0px 0 #9c2020, 2px 2px 0 #9c2020, -2px 2px 0 #9c2020, 2px -2px 0 #9c2020, -2px -2px 0 #9c2020, 0px 2px 0 #9c2020, 0px -2px 0 #9c2020,-2px 0px 0 #9c2020, 2px 0px 0 #9c2020, 1px 2px 0 #9c2020,-1px 2px 0 #9c2020, 1px -2px 0 #9c2020, -1px -2px 0 #9c2020, 2px 1px 0 #9c2020, -2px 1px 0 #9c2020, 2px -1px 0 #9c2020, -2px -1px 0 #9c2020;
+}
+.update-name::selection, .date::selection, .summary::selection, .description::selection, .description br::selection{
+  color: white;
+  background-color: #9c2020;
+  text-shadow: none;
+}
+.date{
+  margin-left: 10%;
+  color: white;
+  text-shadow: 1px 1px 0 #9c2020, -1px 1px 0 #9c2020, 1px -1px 0 #9c2020, -1px -1px 0 #9c2020, 0px 1px 0 #9c2020, 0px -1px 0 #9c2020, -1px 0px 0 #9c2020, 1px 0px 0 #9c2020, 2px 2px 0 #9c2020, -2px 2px 0 #9c2020, 2px -2px 0 #9c2020, -2px -2px 0 #9c2020, 0px 2px 0 #9c2020, 0px -2px 0 #9c2020,-2px 0px 0 #9c2020, 2px 0px 0 #9c2020, 1px 2px 0 #9c2020,-1px 2px 0 #9c2020, 1px -2px 0 #9c2020, -1px -2px 0 #9c2020, 2px 1px 0 #9c2020, -2px 1px 0 #9c2020, 2px -1px 0 #9c2020, -2px -1px 0 #9c2020;
+}
+.summary{
+  margin-left: 20%;
+  font-size: 25px;
+  color: white;
+  text-shadow: 1px 1px 0 #9c2020, -1px 1px 0 #9c2020, 1px -1px 0 #9c2020, -1px -1px 0 #9c2020, 0px 1px 0 #9c2020, 0px -1px 0 #9c2020, -1px 0px 0 #9c2020, 1px 0px 0 #9c2020, 2px 2px 0 #9c2020, -2px 2px 0 #9c2020, 2px -2px 0 #9c2020, -2px -2px 0 #9c2020, 0px 2px 0 #9c2020, 0px -2px 0 #9c2020,-2px 0px 0 #9c2020, 2px 0px 0 #9c2020, 1px 2px 0 #9c2020,-1px 2px 0 #9c2020, 1px -2px 0 #9c2020, -1px -2px 0 #9c2020, 2px 1px 0 #9c2020, -2px 1px 0 #9c2020, 2px -1px 0 #9c2020, -2px -1px 0 #9c2020;
+}
+.description{
+  margin-left: 20%;
+  font-size: 20px;
+  color: #9c2020;
+  width: 70%;
+  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff, 0px 1px 0 #fff, 0px -1px 0 #fff, -1px 0px 0 #fff, 1px 0px 0 #fff, 2px 2px 0 #fff, -2px 2px 0 #fff, 2px -2px 0 #fff, -2px -2px 0 #fff, 0px 2px 0 #fff, 0px -2px 0 #fff,-2px 0px 0 #fff, 2px 0px 0 #fff, 1px 2px 0 #fff,-1px 2px 0 #fff, 1px -2px 0 #fff, -1px -2px 0 #fff, 2px 1px 0 #fff, -2px 1px 0 #fff, 2px -1px 0 #fff, -2px -1px 0 #fff;
+}
+
+/* Image styles */
+.neutron_0111, .neutron_0000, .Quark_2135, .Quark_2122, .Quark_1235, .Quark_1225, .Quark_1222, .Quark_1111{
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.neutron_0111{
+  background-image: url("../images/version/Neutron_0111 front page.png");
+  min-height: 300px;
+}
+.neutron_0000{
+  background-image: url("../images/version/Neutron_0000 snapshot.png");
+  min-height: 300px;
+}
+.Quark_2135{
+  background-image: url("../images/pastry_1.jpeg");
+  min-height: 300px;
+}
+.Quark_2122{
+  background-image: url("../images/pastry_3.png");
+  min-height: 300px;
+}
+.Quark_1235{
+  background-image: url("../images/pastry_1.jpeg");
+  min-height: 300px;
+}
+.Quark_1225{
+  background-image: url("../images/pastry_3.png");
+  min-height: 300px;
+}
+.Quark_1222{
+  background-image: url("../images/pastry_1.jpeg");
+  min-height: 300px;
+}
+.Quark_1111{
+  background-image: url("../images/pastry_3.png");
+  min-height: 300px;
+}

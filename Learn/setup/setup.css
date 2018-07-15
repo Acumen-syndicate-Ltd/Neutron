@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+/* General styles */
+body{
+  width: 100%;
+  margin: 0;
+}
+.left{
+  float: left;
+  width: 50%;
+  height: 700px;
+  clear: both;
+}
+.right{
+  float: right;
+  width: 50%;
+  height: 700px;
+}
+.split{
+  overflow: hidden;
+}
+
+/* Writing styles start below */
+.written{
+  font-family: Ubuntu, San Francisco, BlinkMacSystemFont, Arial;
+  font-size: 140%;
+  text-align: left;
+  margin-left: 3%;
+  width: 94%;
+}
+.title{
+  font-family: Times, San Francisco, BlinkMacSystemFont, Arial;
+  font-size: 300%;
+  text-align: center;
+}
+.style-red{
+  background-color: #9c2020;
+  color: white;
+}
+.style-vanilla{
+  background-color: #ffff99;
+  color: black;
+}
+.style-white{
+  background-color: white;
+  color: #9c2020;
+}
+
+/* Niche styles */
+.split img{
+  height: 100%;
+  width: 100%;
+}
+img::selection{
+  background-color: white;
+}
+.slc-vnil::selection{
+  background-color: black;
+  color: #ffff99;
+}
+.slc-red::selection{
+  background-color: #fff;
+  color: #9c2020;
+}
+.slc-white::selection{
+  background-color: #9c2020;
+  color: #fff;
+}
+.main-title{
+  text-align: center;
+  width: 100%;
+  font-family: Arial;
+  color: #9c2020;
+  font-size: 300%;
+  margin: 5vh 0 2vh 0;
+  background-
+}
+.search-bar{
+  text-align: left;
+  margin-left: 33%;
+  width: 33%;
+  padding-left: 2vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);     font-family: san francisco;
+  font-size: 191%;
+}
+
+/* Image styles */
+
+.img1, .img2, .img3, .img4, .img5, .img6, .img7{
+  position: relative;
+
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 700px;
+}
+.img1{
+  background-image: url("/images/square/Github-page.png");
+  background-position: left;
+}
+.img2{
+  background-image: url("/images/square/Atom-page.png");
+  background-position: right;
+}
+.img3{
+  background-image: url("/images/square/Grammarly-page.png");
+  background-position: left;
+}
+.img4{
+  background-image: url("/images/square/Netlify-page.png");
+  background-position: right;
+}
+.img5{
+  background-image: url("/images/square/Godaddy-page.png");
+  background-position: left;
+}
+.img6{
+  background-image: url("/images/square/Freenom-page.png");
+  background-position: right;
+}
+.img7{
+  background-image: url("/images/pastry_6.jpeg");
+  background-position: left;
+}

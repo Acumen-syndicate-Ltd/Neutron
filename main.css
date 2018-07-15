@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+
+/* General styles */
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.left{
+  float: left;
+  width: 50%;
+  height: 700px;
+  clear: both;
+}
+.right{
+  float: right;
+  width: 50%;
+  height: 700px;
+}
+.split{
+  overflow: hidden;
+}
+
+/* Writing styles start below */
+.written{
+  font-family: Ubuntu, San Francisco, BlinkMacSystemFont, Arial;
+  font-size: 120%;
+  text-align: left;
+  margin-left: 3%;
+  width: 94%;
+}
+.title{
+  font-family: Times, San Francisco, BlinkMacSystemFont, Arial;
+  font-size: 300%;
+  text-align: center;
+}
+.style-red{
+  background-color: #9c2020;
+  color: white;
+}
+.style-vanilla{
+  background-color: #ffff99;
+  color: black;
+}
+.style-white{
+  background-color: white;
+  color: #9c2020;
+}
+
+/* Page cover styles */
+#cover-page{
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 10;
+}
+.cover-page{
+  background-image: url("../images/Acumen static backdrop.png");
+  height: 725px;
+}
+#written-cover{
+    font-family: futura heavy, san francisco, Ariel, sans-serif;
+    display: block;
+    z-index: 10;
+}
+#cover-span{
+  font-size: 6vw;
+  color: #9c2020;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 300px;
+}
+#cover-image{
+  position: absolute;
+  margin: auto;
+  display: block;
+  width: 100%;
+  top: 300px;
+  width: 50px;
+  height: 50px;
+}
+#cover-span:hover{
+  cursor: crosshair;
+}
+#cover-span::selection{
+  color: white;
+  background-color: #9c2020;
+}
+#footer{
+  bottom: 0;
+  position: absolute;
+  z-index: 5;
+}
+
+/* Niche styles */
+img{
+  height: 100%;
+}
+img::selection{
+  background-color: white;
+}
+.slc-vnil::selection{
+  background-color: black;
+  color: #ffff99;
+}
+.slc-red::selection{
+  background-color: #fff;
+  color: #9c2020;
+}
+.slc-white::selection{
+  background-color: #9c2020;
+  color: #fff;
+}
+.main-title{
+  text-align: center;
+  width: 100%;
+  font-family: Arial;
+  color: #9c2020;
+  font-size: 300%;
+  margin: 5vh 0 2vh 0;
+  background-
+}
+.search-bar{
+  text-align: left;
+  margin-left: 30%;
+  width: 40%;
+  padding-left: 2vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);     font-family: san francisco;
+  font-size: 191%;
+}
+
+/* Card styles */
+.cards{
+  width: 27%;
+  padding: 2%;
+  display: inline-block;
+  height: auto;
+  vertical-align: top;
+  text-decoration: none;
+  margin: 10px;
+}
+.cards p{
+  color: black;
+}
+.written-cards{
+  width: 100%;
+  font-family: Ubuntu, San Francisco, Arial;
+  text-align: center;
+  font-size: 1.3vw;
+}
+.img-cards{
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.cards:hover{
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+      cursor: alias;
+}
+.img-cards:hover{
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0)
+}
+.card-nums{
+  color: #9c2020;
+  font-size: 1.5vw;
+  font-weight: bold;
+  text-align: center;
+}
+/* //TODO: Equal out card sizes */

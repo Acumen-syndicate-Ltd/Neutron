@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+
+/* General styles */
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: Ubuntu, san francisco, Arial, sans-serif;
+}
+
+/* Text styles */
+.img-title{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 15px #9c2020,
+               0 0 15px #9c2020,
+               0 0 15px #9c2020,
+               0 0 15px #9c2020,
+               0 0 15px #9c2020,
+               0 0 15px #9c2020,
+               0 0 15px #9c2020,
+               0 0 15px #9c2020,
+               0 0 15px #9c2020;
+  font-size: 4vw;
+  letter-spacing: 4px;
+  font-family: San Francisco, Ubuntu, Arial, sans-serif;
+}
+article{
+  background-color: #9c2020;
+  color: white;
+}
+.content h2{
+  text-align: center;
+  margin: 0;
+  font-size: 25px;
+}
+.content p{
+  padding: 10px 30px;
+  margin: 0;
+}
+#main-title{
+  color: #9c2020;
+  font-family: futura heavy, Arial;
+  position: absolute;
+  top: 40%;
+  text-align: center;
+  width: 100%;
+  font-size: 6vw;
+
+}
+#next-page{
+  position: absolute;
+  top: 50%;
+}
+
+/* List styles */
+.lists{
+  width: 100%;
+}
+.sub-list{
+  border-top: 50px solid #9c2020;
+  border-bottom: 50px solid #9c2020;
+  width: 33%;
+  display: inline-block;
+  font-size: 22px;
+}
+.list-heading{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* Selection styles */
+#main-title::selection, .lists::selection, .img-title::selection{
+  background-color: #9c2020;
+  color: white;
+}
+.content h2::selection, .content p::selection, .content ul li::selection{
+  background-color: white;
+  color: #9c2020;
+}
+
+
+/* Image styles */
+.img1, .img2, .img3, .img4, .img5, .img6{
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.img1{
+  background-image: url("../images/Acumen static backdrop.png");
+  min-height: 1000px;
+}
+.img2{
+  background-image: url("../images/mdn-page.png");
+  min-height: 700px;
+}
+.img3{
+  background-image: url("../images/w3schools-page.png");
+  min-height: 700px;
+}
+.img4{
+  background-image: url("../images/codecademy-page.png");
+  min-height: 700px;
+}
+.img5{
+  background-image: url("../images/fcc-page.png");
+  min-height: 700px;
+}
+.img6{
+  background-image: url("../images/sololearn-page.png");
+  min-height: 700px;
+}
