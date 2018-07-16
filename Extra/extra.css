@@ -15,14 +15,38 @@ body{
   margin: 0;
   padding: 0;
   background-color: #fff;
+  font-family: ubuntu, san francisco, Ariel, sans-serif;
 }
-ul{
+.page-title{
+  text-align: center;
+  color: #9c2020;
+  font-size: 60px;
+  font-family: ubuntu, san francisco, Ariel, sans-serif;
+}
+
+/* List styles */
+.main-list{
   list-style-type: none;
+  margin-left: 10%;
+  line-height: 3;
 }
-ul li a{
+.main-list li a{
   font-size: 30px;
   color: #9c2020;
+  text-decoration: none;
 }
-ul li a{
+.main-list li a{
   cursor: alias;
+}
+.main-list li a .link{
+  text-decoration: underline;
+}
+.main-list li a .dev-status{
+  font-style: italic;
+}
+
+/* Selection styles */
+.main-list li a .link::selection, .main-list li a .dev-status::selection, .main-list::selection, .page-title::selection{
+  background-color: #9c2020;
+  color: white;
 }

@@ -15,6 +15,10 @@ body{
   margin: 0;
   background-color: white;
 }
+a{
+  color: white;
+  text-decoration: underline;
+}
 /* Row styles */
 .layout{
   display: inline-block;
@@ -85,7 +89,7 @@ body{
   color: white;
   text-shadow: 1px 1px 0 #9c2020, -1px 1px 0 #9c2020, 1px -1px 0 #9c2020, -1px -1px 0 #9c2020, 0px 1px 0 #9c2020, 0px -1px 0 #9c2020, -1px 0px 0 #9c2020, 1px 0px 0 #9c2020, 2px 2px 0 #9c2020, -2px 2px 0 #9c2020, 2px -2px 0 #9c2020, -2px -2px 0 #9c2020, 0px 2px 0 #9c2020, 0px -2px 0 #9c2020,-2px 0px 0 #9c2020, 2px 0px 0 #9c2020, 1px 2px 0 #9c2020,-1px 2px 0 #9c2020, 1px -2px 0 #9c2020, -1px -2px 0 #9c2020, 2px 1px 0 #9c2020, -2px 1px 0 #9c2020, 2px -1px 0 #9c2020, -2px -1px 0 #9c2020;
 }
-.update-name::selection, .date::selection, .summary::selection, .description::selection, .description br::selection{
+.update-name::selection, .date::selection, .summary::selection, .description::selection, .description br::selection, a::selection{
   color: white;
   background-color: #9c2020;
   text-shadow: none;
@@ -110,12 +114,20 @@ body{
 }
 
 /* Image styles */
-.neutron_0111, .neutron_0000, .Quark_2135, .Quark_2122, .Quark_1235, .Quark_1225, .Quark_1222, .Quark_1111{
+.neutron_xxxx, .neutron_1111, .neutron_0111, .neutron_0000, .Quark_2135, .Quark_2122, .Quark_1235, .Quark_1225, .Quark_1222, .Quark_1111{
   position: relative;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.neutron_xxxx{
+  background-image:;
+  min-height: 300px;
+}
+.neutron_1111{
+  background-image: url("../images/version/Neutron_0111 front page.png");
+  min-height: 300px;
 }
 .neutron_0111{
   background-image: url("../images/version/Neutron_0111 front page.png");
