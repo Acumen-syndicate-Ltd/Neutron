@@ -3,14 +3,16 @@
   <head>
     <link rel="icon" href="/images/favicon.ico" sizes="16x16 24x24 32x32 48x48 64x64">
     <link rel="mask-icon" href="/images/Circle.svg" color="#9c2020">
-    <link rel="stylesheet" href="/Extra/Password/password.css">
+    <link title="sheet_welcome" rel="stylesheet" href="/Extra/Time-visual/time_visual.css">
+    <link title="sheet_app" rel="stylesheet" href="/Extra/Time-visual/time_visual_app.css">
     <link rel="stylesheet" href="/Style-sheets/header-footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <meta name="description" content="Check one place over the period of 24h, using the current time">
     <meta charset="utf-8">
     <title>Acumen time visual</title>
   </head>
-  <body>
+  <body id="body">
     <aside>
       <a id="site-title" href="/">Acumen Syndicate</a>
 
@@ -26,6 +28,11 @@
     </aside>
 
 
+<p id="sample">No way. There's some sample text here<br>It'd be pretty great if it suddenly gray scaled the whole page right?</p>
+<p id="my_button" onclick="app_view()">Current button</p>
+<div id="first_vue">
+  {{ words }}
+</div>
 
 
 
@@ -56,5 +63,5 @@
       </div>
     </footer>
   </body>
-  <script src="/Extra/Password/password.js"></script>
+  <script type="text/javascript" src="/Extra/Time-visual/time_visual.js"></script>
 </html>

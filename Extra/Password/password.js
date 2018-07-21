@@ -10,13 +10,20 @@ var results
 function get_current_length(){
   return Number(document.getElementById("length").value)
 }
-// function length_of_pass(){
-//   if(get_current_length() == 0){
-//     alert("Please specify an integer greater than 0")
-//   }else{
-//     return get_current_length()
-//   }
-// }
+ function length_of_pass(){
+   if(get_current_length() == 0){
+     alert("Please specify an integer greater than 0")
+   }else{
+     return get_current_length()
+   }
+ }
+ /*function length_of_pass(){
+   if(get_current_length() == 0){
+     alert("Please specify an integer greater than 0")
+   }else{
+     return get_current_length()
+   }
+ }*/
 function user_results(){
   this.if_letters = Boolean(document.getElementById("lowercase_letters").checked)
   this.if_capital_letters = Boolean(document.getElementById('capital_letters').checked)
@@ -30,12 +37,12 @@ function getRndInteger(max){
 }
 
 function generation(){
-  if selected desired password length is 0 then
+  /*if selected desired password length is 0 then
     alert "too short"
     return
   if none of the checkboxes is checked
     alert "nothing is checked"
-    return
+    return*/
 
 
   var letters = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"] //26
@@ -70,8 +77,12 @@ function generation(){
   for (var i = 0; i < length_of_pass(); i++){
     password = password.concat(total[getRndInteger(total.length)])
   }
+  if (total.length == 0){
+    return "Nice try, though we have thought ahead!"
+  }else if (total.length > 0){
   console.log(password)
   return password
+  }
 }
 
 function construct(){

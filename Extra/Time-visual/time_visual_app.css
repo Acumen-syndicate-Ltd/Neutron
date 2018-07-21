@@ -13,11 +13,10 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: ubuntu, san francisco, Ariel, sans-serif;
+  font-family: san francisco, ubuntu, Ariel, sans-serif;
 }
 #sample{
   text-align: center;
-  color: #9c2020;
   font-size: 30px;
   margin-bottom: 500px
 }
