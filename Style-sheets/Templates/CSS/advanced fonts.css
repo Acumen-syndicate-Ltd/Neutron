@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');/*Standard font for any general page content. name == Ubuntu */
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");/*Real monospace font. name ==  source code pro*/
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+} /*Apple's San Francisco font is crisp, sans-serif, and modern */
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+} /*Futura heavy is Acumen's standardized font. Only to be used for page titles */
+@font-face {
+  font-family: "futura light";
+  src: url("/images/fonts/futura light bt.ttf");
+} /*Futura light is a sharper alternative to San Francisco. Works loosely as a monospace */
+@font-face{
+  font-family: "futura future";
+  src: url("/images/fonts/futura.ttf");
+} /*Retro 80s future style font. Pretty niche usage */
+@font-face {
+  font-family: "menlo";
+  src: url("/images/fonts/menlo.ttf");
+} /* Monospaced font that we use in Atom. Good for showing code blocks or simple monospace*/
+/* Additional built-in fonts include:
+Serif: Most widely supported font. Good for elegant feeling content
+Sans-serif: Very widely supported and a great fallback for any normal font
+Monospace: Very widely supported monospace font. Use as a fallback for any monospace writing
+*/
+
+/* General styles */
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: ubuntu, san francisco, Ariel, sans-serif;
+}

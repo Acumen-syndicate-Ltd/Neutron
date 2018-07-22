@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
@@ -8,16 +9,24 @@
   font-family: "futura heavy";
   src: url("/images/futura heavy font.ttf");
 }
+@font-face {
+  font-family: "futura light";
+  src: url("/images/fonts/futura light bt.ttf");
+}
+@font-face{
+  font-family: "futura future";
+  src: url("/images/fonts/futura.ttf");
+}
+@font-face {
+  font-family: "menlo";
+  src: url("/images/fonts/menlo.ttf");
+}
+
 
 /* General styles */
 body{
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: ubuntu, san francisco, Ariel, sans-serif;
-}
-#sample{
-  text-align: center;
-  color: #9c2020;
-  font-size: 30px;
-  margin-bottom: 500px
 }

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+@font-face {
+  font-family: "futura light";
+  src: url("/images/fonts/futura light bt.ttf");
+}
+@font-face{
+  font-family: "futura future";
+  src: url("/images/fonts/futura.ttf");
+}
+
+/* General styles */
+body{
+  margin: 0;
+  padding: 0;
+  font-family: ubuntu, san francisco, Ariel, sans-serif;
+}
+#sample{
+  text-align: center;
+  color: #9c2020;
+  font-size: 30px;
+  margin-bottom: 500px
+}
+
+/* Clock styles */
+#appParameters{
+  background-position: relative;
+  height: 700px;
+}
+#appDiv{
+  font-family: futura light, source code pro, monospace, sans-serif;
+  display: block;
+}
+#dateHere{
+  font-size: 8vw;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 30%;
+}
+#dateHere::selection{
+  color: none;
+  background-color: none;
+}
+#dateHere:hover{
+  cursor: default;
+}
+
+/* View button */
+.centering{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#nightMode{
+  font-size: 20px;
+  display: inline;
+  color: black;
+  /*background-color: black;
+  border: 10px solid black;
+  border-radius: 40px;*/
+}
+#nightMode::selection{
+  color: none;
+  background-color: none;
+}
+#nightMode:hover{
+  cursor: none;
+}
+
+/* Toggle styles */
+.circleSVG-day{
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  fill: white;
+  stroke: black;
+  stroke-width: 5;
+}
+.circleSVG-day:hover{
+  fill: black;
+}
+.circleSVG-night{
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  fill: black;
+  stroke: white;
+  stroke-width: 5;
+}
+.circleSVG-night:hover{
+  fill: white;
+}
+.body-day{
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  background-color: white;
+}
+.body-night{
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  background-color: black;
+}
+.clock-day{
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  background-color: white;
+  color: black;
+}
+.clock-night{
+  transition: 300ms;
+  transition-timing-function: ease-in-out;
+  background-color: black;
+  color: white;
+}

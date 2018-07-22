@@ -1,0 +1,36 @@
+/*
+!!!!!!!!!!!!!!!!!!!!! Use (Ctrl + a) then (Ctrl + c) to copy this template to another .css document !!!!!!!!!!!!!!!!!!!!
+
+
+                                 DO NOT PRESS (Ctrl + s) WHILE ON THE css.css DOCUMENT
+
+
+                                 
+*/
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');/*Standard font for any general page content. name == Ubuntu */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+} /*Apple's San Francisco font is crisp, sans-serif, and modern */
+/*
+Sans-serif: Very widely supported and a great fallback for any normal font
+*/
+
+/* General styles */
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: Ubuntu, san francisco, sans-serif;
+}
+
+/* Place your CSS here and below. Remember the basics:
+
+The below will use example HTML: <p class="example" id="placeholder">Text text text</p>
+
+Classes are targeted with a . in front >>>>>>>>>>>>>>>>>> .example{ color: white; }
+Ids are targeted with a # in front >>>>>>>>>>>>>>>>>>>>>> #placeholder{ color: white; }
+Element tags are targeted without anything in front >>>>> p{ color: white; }
+*/
