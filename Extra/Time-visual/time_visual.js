@@ -1,12 +1,15 @@
 
-var now = moment()
+var now = getTime()
 
 var getTime = function(){
-  var now = moment()
+  var now = converter(moment())
   return now
 }
 
 var i = 0
+
+
+//                                                                                !!!!!!!!!! Place in initiation script to start off program
 
 //var refreshTime = function(){
 //  setInterval(function(){var now = moment(); document.getElementById("clock").innerHTML = now}, 1000)
@@ -298,44 +301,56 @@ var imgTime = {
   92: 82800,
   93: 83700,
   94: 84600,
-  95: 85500}
+  95: 85500}   //Seconds of indicies found for image[i].time
 
 var renderboot = function(){
-  var now = converter(moment())
-  var r = 0, reference
+  var r = 0, i = 0, reference
 
-  if (now === 0){
+  if (now === 0){    //For the midnight switch dillemma
     document.getElementById("curr_back").src = image[0].source_low
     document.getElementById("prev_back").src = image[95].source_low
+    document.getElementById("curr_back").style.opacity = 0
     return
   }
 
-  if (now % 900 === 0){ //Only active on the 15 minute mark
-    var i = 0
-    while (reference != i){                       //Gather reference time for current foreground
+    while (true){                       //Gather reference time for current foreground
       if (imgTime[i] <= now < imgTime[i + 1]){
-        reference = i
+        break
       }else{
         i += 1
       }
     }
     document.getElementById("curr_back").src = image[i].source_low
     document.getElementById("prev_back").src = image[i-1].source_low
-  }
-
-  var opacitySet = now - imgTime[i]
-  document.getElementById("curr_back").style.opacity = opacitySet
-
-
 }
+//Activates every 15 mins- Changes curr_back and prev_back image sources          !!!!!!!!!! Must get variable "now"
 
-15 mins == 900 secs
+var opacitySet = function(){
+  var setOpacity = (now - imgTime[i])/900
+  document.getElementById("curr_back").style.opacity = setOpacity
+}
+//Runs every second- calculates and changes the opacity of curr_back              !!!!!!!!!! Must have access to "now" and "i"
 
-12 issue
-if is 0:00 or 0:01 run reboot
+var run = function(){
+  var now = getTime()
+  if (now % 900 === 0){
+    renderboot()
+  }
+  opacitySet()
+}
+//Initiates above functions
+
+var runRun = function(){
+  setInterval(run, 1000)
+}
+//Sets an interval to run all the functions
+
+// Note that 15 mins == 900 secs
 
 
-Normal gathering
+
+
+
 
 
 
