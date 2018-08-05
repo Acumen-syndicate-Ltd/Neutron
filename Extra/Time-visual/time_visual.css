@@ -22,6 +22,11 @@
   src: url("/images/fonts/menlo.ttf");
 }
 
+/*\ TODO:
+|*| Create 3 different sizes for images- low 1920x1980, high 3840x2160, raw 6000x4000
+|*| Force a pre-render of all the images to system memory
+|*| Create a starting page with warning and options for resolution
+\*/
 
 /* General styles */
 body{
