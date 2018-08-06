@@ -1,30 +1,38 @@
 /*\ TODO:
 |*| Remove intallationRun from a function
 |*| Check if setInterval() will work with being in a function
-|*| Add a check for what quality the user wants (Probably just copy paste into 3 nested functions)
+|*| Double check globalization on image and imgTime
+|*| Merge source functions and just manipulate renderboot()
+|*| Create a clear function for inital boot screen
+|*| Integrate into the home page
+|*| Finish writeup explaining 
 \*/
 
-var converter = function(Rnow){
-  var hours = Rnow.hours() * 3.6e3
-  var mins = Rnow.minutes() * 60
-  var secs = Rnow.seconds()
-  var sum = hours + mins + secs
-  return sum
-}
-//Takes in time and returns the number of seconds present
-var getTime = function(){
-  var now = converter(moment())
-  return now
-}
-//Recieves and convertes current time into seconds
+/* Written description of document - /Extra/Time-visual/time_visual.js
+  Here we have an app for a dynamic web-based background that will be preloaded to the user's RAM.
+By manipulating two img elements, we're able to give a more gradual transition. "curr_back"
+reffers to a foreground image, who's opacity will slowly near 1. "prev_back" is the background
+image which will consistantly stay opaque, allowing the smooth transition for images.
 
-var initiationRun = function(){
-  var now = getTime()
-  var i = renderboot()
-  opacitySet()
-}
-initiationRun() // Function is unnecessary though assists legibility
-//Initiation boot to find starting images and opacity settings
+  Users will be guided through the app experience with basic controls and informative messages. Upon
+opening the app window, users will be greeted by 3 options: 1080 (16:9), 4k (16:9), raw (6000x4000).
+These options will have a similar layout to the home page's cards, improving through user familiarity
+to highly common subscription plan option layouts. 1080 will be positioned on the left, as a sort of
+lower end option, while raw will be on the right. A rectangular notch, positioned centeralized at the
+cards' top, will be coloured for more visual communication. Light green for 1080, light yellow for 4k
+(#ffff99), and red for raw. Below the card image, zoomed in shots of different resolutions, a short
+description informs the user of this choice and any potential consequences that may follow.
+Additionally, clicking the raw option will throw up an alert() making certain users are prepared for
+the RAM loss on their device. Mobile devices may have only sources_low available, for the users' sake
+
+  Behind the scenes runs a powerful JS program running the frontend show. The global image{} object
+stores the image links for all qualities and time of initialization. image[i].time shouldn't be used
+as a second imgTime{} object stores the time in seconds. Both objects have corresponding indicies.
+Three functions found below preform the exact same function, just for different image resolutions.
+First a critical converter function is initialized. This converts a given time object into seconds.
+getTime() is used for repeatedly initializing var now into seconds. Next an initialization run
+swiftly initializes a foreground and background in the same way done by renderboot().
+*/
 
 
 var image = {
@@ -248,8 +256,7 @@ var imgTime = {
   95: 85500}
 // imgTime[i] === converter(image[i].time)
 
-
-var renderboot = function(){
+var renderboot_low = function(){
   var i = 0
 
   if (now === 0){    //For the midnight switch dillemma
@@ -269,23 +276,208 @@ var renderboot = function(){
     document.getElementById("curr_back").src = image[i].source_low
     document.getElementById("prev_back").src = image[i-1].source_low
     return i
-}
-//Activates every 15 mins- Changes curr_back and prev_back image sources
-
-var opacitySet = function(){
-  var setOpacity = (now - imgTime[i])/900
-  document.getElementById("curr_back").style.opacity = setOpacity
-}
-//Runs every second- calculates and changes the opacity of curr_back
-
-var run = function(){
-  var now = getTime()
-  if (now % 900 === 0){
-    i = renderboot()
   }
-  opacitySet()
-}
-//Initiates above functions        Note: 15 mins === 900 secs
 
-setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
-//Sets an interval to run all the functions
+
+
+  var converter = function(Rnow){
+    var hours = Rnow.hours() * 3.6e3
+    var mins = Rnow.minutes() * 60
+    var secs = Rnow.seconds()
+    var sum = hours + mins + secs
+    return sum
+  }
+  //Takes in time and returns the number of seconds present
+  var getTime = function(){
+    var now = converter(moment())
+    return now
+  }
+  //Recieves and convertes current time into seconds
+  var findQuality = function(){
+    if ()
+  }
+
+  var initiationRun = function(){
+    var now = getTime()
+    var i = renderboot()
+    opacitySet()
+  }
+  initiationRun() // Function is unnecessary though assists legibility
+  //Initiation boot to find starting images and opacity settings
+
+
+  var renderboot = function(){
+    var i = 0
+
+    if (now === 0){    //For the midnight switch dillemma
+      document.getElementById("curr_back").src = image[0].source_low
+      document.getElementById("prev_back").src = image[95].source_low
+      document.getElementById("curr_back").style.opacity = 0
+      return i
+    }
+
+      while (true){                       //Gather reference time for current foreground
+        if (imgTime[i] <= now < imgTime[i + 1]){
+          break
+        }else{
+          i += 1
+        }
+      }
+      document.getElementById("curr_back").src = image[i].source_low
+      document.getElementById("prev_back").src = image[i-1].source_low
+      return i
+    }
+  //Activates every 15 mins- Changes curr_back and prev_back image sources
+
+  var opacitySet = function(){
+    var setOpacity = (now - imgTime[i])/900
+    document.getElementById("curr_back").style.opacity = setOpacity
+  }
+  //Runs every second- calculates and changes the opacity of curr_back
+
+  var run = function(){
+    var now = getTime()
+    if (now % 900 === 0){
+      i = renderboot()
+    }
+    opacitySet()
+  }
+  //Initiates above functions        Note: 15 mins === 900 secs
+
+  setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
+  //Sets an interval to run all the functions
+
+
+var sources_high = function(){
+
+  var converter = function(Rnow){
+    var hours = Rnow.hours() * 3.6e3
+    var mins = Rnow.minutes() * 60
+    var secs = Rnow.seconds()
+    var sum = hours + mins + secs
+    return sum
+  }
+  //Takes in time and returns the number of seconds present
+  var getTime = function(){
+    var now = converter(moment())
+    return now
+  }
+  //Recieves and convertes current time into seconds
+
+  var initiationRun = function(){
+    var now = getTime()
+    var i = renderboot()
+    opacitySet()
+  }
+  initiationRun() // Function is unnecessary though assists legibility
+  //Initiation boot to find starting images and opacity settings
+
+
+  var renderboot = function(){
+    var i = 0
+
+    if (now === 0){    //For the midnight switch dillemma
+      document.getElementById("curr_back").src = image[0].source_high
+      document.getElementById("prev_back").src = image[95].source_high
+      document.getElementById("curr_back").style.opacity = 0
+      return i
+    }
+
+      while (true){                       //Gather reference time for current foreground
+        if (imgTime[i] <= now < imgTime[i + 1]){
+          break
+        }else{
+          i += 1
+        }
+      }
+      document.getElementById("curr_back").src = image[i].source_high
+      document.getElementById("prev_back").src = image[i-1].source_high
+      return i
+    }
+  //Activates every 15 mins- Changes curr_back and prev_back image sources
+
+  var opacitySet = function(){
+    var setOpacity = (now - imgTime[i])/900
+    document.getElementById("curr_back").style.opacity = setOpacity
+  }
+  //Runs every second- calculates and changes the opacity of curr_back
+
+  var run = function(){
+    var now = getTime()
+    if (now % 900 === 0){
+      i = renderboot()
+    }
+    opacitySet()
+  }
+  //Initiates above functions        Note: 15 mins === 900 secs
+
+  setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
+  //Sets an interval to run all the functions
+}
+
+var sources_raw = function(){
+
+  var converter = function(Rnow){
+    var hours = Rnow.hours() * 3.6e3
+    var mins = Rnow.minutes() * 60
+    var secs = Rnow.seconds()
+    var sum = hours + mins + secs
+    return sum
+  }
+  //Takes in time and returns the number of seconds present
+  var getTime = function(){
+    var now = converter(moment())
+    return now
+  }
+  //Recieves and convertes current time into seconds
+
+  var initiationRun = function(){
+    var now = getTime()
+    var i = renderboot()
+    opacitySet()
+  }
+  initiationRun() // Function is unnecessary though assists legibility
+  //Initiation boot to find starting images and opacity settings
+
+
+  var renderboot = function(){
+    var i = 0
+
+    if (now === 0){    //For the midnight switch dillemma
+      document.getElementById("curr_back").src = image[0].source_raw
+      document.getElementById("prev_back").src = image[95].source_raw
+      document.getElementById("curr_back").style.opacity = 0
+      return i
+    }
+
+      while (true){                       //Gather reference time for current foreground
+        if (imgTime[i] <= now < imgTime[i + 1]){
+          break
+        }else{
+          i += 1
+        }
+      }
+      document.getElementById("curr_back").src = image[i].source_raw
+      document.getElementById("prev_back").src = image[i-1].source_raw
+      return i
+    }
+  //Activates every 15 mins- Changes curr_back and prev_back image sources
+
+  var opacitySet = function(){
+    var setOpacity = (now - imgTime[i])/900
+    document.getElementById("curr_back").style.opacity = setOpacity
+  }
+  //Runs every second- calculates and changes the opacity of curr_back
+
+  var run = function(){
+    var now = getTime()
+    if (now % 900 === 0){
+      i = renderboot()
+    }
+    opacitySet()
+  }
+  //Initiates above functions        Note: 15 mins === 900 secs
+
+  setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
+  //Sets an interval to run all the functions
+}
