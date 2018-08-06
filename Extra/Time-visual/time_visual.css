@@ -57,3 +57,18 @@ body{
 p{
   color: white;
 }
+
+/* Card styles */
+#card_layout{
+  width: 100%;
+  display: flex;
+}
+#lower{
+  width: 25%;
+}
+#higher{
+  width: 25%;
+}
+#raw{
+  width: 25%;
+}

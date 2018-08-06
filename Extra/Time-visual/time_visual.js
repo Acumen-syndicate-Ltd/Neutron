@@ -1,11 +1,8 @@
 /*\ TODO:
-|*| Remove intallationRun from a function
-|*| Check if setInterval() will work with being in a function
-|*| Double check globalization on image and imgTime
-|*| Merge source functions and just manipulate renderboot()
-|*| Create a clear function for inital boot screen
+|*| Check if setInterval() will work without being in a function
+|*| Work with generating img tags after the fact
+|*| Finish writeup explaining
 |*| Integrate into the home page
-|*| Finish writeup explaining 
 \*/
 
 /* Written description of document - /Extra/Time-visual/time_visual.js
@@ -34,7 +31,7 @@ getTime() is used for repeatedly initializing var now into seconds. Next an init
 swiftly initializes a foreground and background in the same way done by renderboot().
 */
 
-
+//+++ Global static object/variable initiation +++
 var image = {
    0: {time: moment({hours: 0, minutes: 0}), source_low: "/images/time_vis/low/", source_high: "/images/time_vis/high/", source_raw: "/images/time_vis/raw/"},
    1: {time: moment({hours: 0, minutes: 15}), source_low: "/images/time_vis/low/", source_high: "/images/time_vis/high/", source_raw: "/images/time_vis/raw/"},
@@ -255,13 +252,71 @@ var imgTime = {
   94: 84600,
   95: 85500}
 // imgTime[i] === converter(image[i].time)
+var res //Will gives image resolution value based on user selection
+var lowCard = document.getElementById("lower")
+var highCard = document.getElementById("higher")
+var rawCard = document.getElementById("raw")
 
-var renderboot_low = function(){
+
+//+++ Global function initiation +++
+var converter = function(Rnow){
+  var hours = Rnow.hours() * 3.6e3
+  var mins = Rnow.minutes() * 60
+  var secs = Rnow.seconds()
+  var sum = hours + mins + secs
+  return sum
+}
+//Takes in time and returns the number of seconds present
+var getTime = function(){
+  var now = converter(moment())
+  return now
+}
+//Recieves and convertes current time into seconds
+var getRes = function(userRes){
+  if(userRes == "low" || userRes == "high" || userRes == "raw"){
+    return res = userRes
+  }else{
+    alert("Error: Invalid selection for image resolution.\nPlease reload the page and try again")
+    return res = null
+  }
+}
+//Defines what resolution of images users will recieve
+
+
+//+++ Initial boot script +++
+  lowCard.addEventListener("click", getRes("low"))
+  highCard.addEventListener("click", getRes("high"))
+  rawCard.addEventListener("click", getRes("raw"))
+  lowCard.addEventListener("click", initalBoot())
+  highCard.addEventListener("click", initalBoot())
+  rawCard.addEventListener("click", initalBoot())
+
+var initalBoot = function(){
+  document.getElementById("card_layout").remove()
+  var img_curr = document.createElement("img")
+  var img_prev = document.createElement("img")
+  img_curr.setAttribute('id', "curr_back")
+  img_prev.setAttribute('id', "prev_back")
+  document.appendChild(img_curr)
+  document.appendChild(img_prev)
+
+  var now = getTime()
+  var i = renderboot()
+  opacitySet()
+}
+//Initiation boot finds starting images, opacity, and resolution
+
+
+
+
+
+//+++ Recursive updating to page +++
+var renderboot = function(){
   var i = 0
 
   if (now === 0){    //For the midnight switch dillemma
-    document.getElementById("curr_back").src = image[0].source_low
-    document.getElementById("prev_back").src = image[95].source_low
+    document.getElementById("curr_back").src = image[0]["source_" + res]
+    document.getElementById("prev_back").src = image[95]["source_" + res]
     document.getElementById("curr_back").style.opacity = 0
     return i
   }
@@ -273,211 +328,26 @@ var renderboot_low = function(){
         i += 1
       }
     }
-    document.getElementById("curr_back").src = image[i].source_low
-    document.getElementById("prev_back").src = image[i-1].source_low
+    document.getElementById("curr_back").src = image[i]["source_" + res]
+    document.getElementById("prev_back").src = image[i-1]["source_" + res]
     return i
   }
+//Activates every 15 mins- Changes curr_back and prev_back image sources
 
-
-
-  var converter = function(Rnow){
-    var hours = Rnow.hours() * 3.6e3
-    var mins = Rnow.minutes() * 60
-    var secs = Rnow.seconds()
-    var sum = hours + mins + secs
-    return sum
-  }
-  //Takes in time and returns the number of seconds present
-  var getTime = function(){
-    var now = converter(moment())
-    return now
-  }
-  //Recieves and convertes current time into seconds
-  var findQuality = function(){
-    if ()
-  }
-
-  var initiationRun = function(){
-    var now = getTime()
-    var i = renderboot()
-    opacitySet()
-  }
-  initiationRun() // Function is unnecessary though assists legibility
-  //Initiation boot to find starting images and opacity settings
-
-
-  var renderboot = function(){
-    var i = 0
-
-    if (now === 0){    //For the midnight switch dillemma
-      document.getElementById("curr_back").src = image[0].source_low
-      document.getElementById("prev_back").src = image[95].source_low
-      document.getElementById("curr_back").style.opacity = 0
-      return i
-    }
-
-      while (true){                       //Gather reference time for current foreground
-        if (imgTime[i] <= now < imgTime[i + 1]){
-          break
-        }else{
-          i += 1
-        }
-      }
-      document.getElementById("curr_back").src = image[i].source_low
-      document.getElementById("prev_back").src = image[i-1].source_low
-      return i
-    }
-  //Activates every 15 mins- Changes curr_back and prev_back image sources
-
-  var opacitySet = function(){
-    var setOpacity = (now - imgTime[i])/900
-    document.getElementById("curr_back").style.opacity = setOpacity
-  }
-  //Runs every second- calculates and changes the opacity of curr_back
-
-  var run = function(){
-    var now = getTime()
-    if (now % 900 === 0){
-      i = renderboot()
-    }
-    opacitySet()
-  }
-  //Initiates above functions        Note: 15 mins === 900 secs
-
-  setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
-  //Sets an interval to run all the functions
-
-
-var sources_high = function(){
-
-  var converter = function(Rnow){
-    var hours = Rnow.hours() * 3.6e3
-    var mins = Rnow.minutes() * 60
-    var secs = Rnow.seconds()
-    var sum = hours + mins + secs
-    return sum
-  }
-  //Takes in time and returns the number of seconds present
-  var getTime = function(){
-    var now = converter(moment())
-    return now
-  }
-  //Recieves and convertes current time into seconds
-
-  var initiationRun = function(){
-    var now = getTime()
-    var i = renderboot()
-    opacitySet()
-  }
-  initiationRun() // Function is unnecessary though assists legibility
-  //Initiation boot to find starting images and opacity settings
-
-
-  var renderboot = function(){
-    var i = 0
-
-    if (now === 0){    //For the midnight switch dillemma
-      document.getElementById("curr_back").src = image[0].source_high
-      document.getElementById("prev_back").src = image[95].source_high
-      document.getElementById("curr_back").style.opacity = 0
-      return i
-    }
-
-      while (true){                       //Gather reference time for current foreground
-        if (imgTime[i] <= now < imgTime[i + 1]){
-          break
-        }else{
-          i += 1
-        }
-      }
-      document.getElementById("curr_back").src = image[i].source_high
-      document.getElementById("prev_back").src = image[i-1].source_high
-      return i
-    }
-  //Activates every 15 mins- Changes curr_back and prev_back image sources
-
-  var opacitySet = function(){
-    var setOpacity = (now - imgTime[i])/900
-    document.getElementById("curr_back").style.opacity = setOpacity
-  }
-  //Runs every second- calculates and changes the opacity of curr_back
-
-  var run = function(){
-    var now = getTime()
-    if (now % 900 === 0){
-      i = renderboot()
-    }
-    opacitySet()
-  }
-  //Initiates above functions        Note: 15 mins === 900 secs
-
-  setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
-  //Sets an interval to run all the functions
+var opacitySet = function(){
+  var setOpacity = (now - imgTime[i])/900
+  document.getElementById("curr_back").style.opacity = setOpacity
 }
+//Runs every second- calculates and changes the opacity of curr_back
 
-var sources_raw = function(){
-
-  var converter = function(Rnow){
-    var hours = Rnow.hours() * 3.6e3
-    var mins = Rnow.minutes() * 60
-    var secs = Rnow.seconds()
-    var sum = hours + mins + secs
-    return sum
+var run = function(){
+  var now = getTime()
+  if (now % 900 === 0){
+    i = renderboot()
   }
-  //Takes in time and returns the number of seconds present
-  var getTime = function(){
-    var now = converter(moment())
-    return now
-  }
-  //Recieves and convertes current time into seconds
-
-  var initiationRun = function(){
-    var now = getTime()
-    var i = renderboot()
-    opacitySet()
-  }
-  initiationRun() // Function is unnecessary though assists legibility
-  //Initiation boot to find starting images and opacity settings
-
-
-  var renderboot = function(){
-    var i = 0
-
-    if (now === 0){    //For the midnight switch dillemma
-      document.getElementById("curr_back").src = image[0].source_raw
-      document.getElementById("prev_back").src = image[95].source_raw
-      document.getElementById("curr_back").style.opacity = 0
-      return i
-    }
-
-      while (true){                       //Gather reference time for current foreground
-        if (imgTime[i] <= now < imgTime[i + 1]){
-          break
-        }else{
-          i += 1
-        }
-      }
-      document.getElementById("curr_back").src = image[i].source_raw
-      document.getElementById("prev_back").src = image[i-1].source_raw
-      return i
-    }
-  //Activates every 15 mins- Changes curr_back and prev_back image sources
-
-  var opacitySet = function(){
-    var setOpacity = (now - imgTime[i])/900
-    document.getElementById("curr_back").style.opacity = setOpacity
-  }
-  //Runs every second- calculates and changes the opacity of curr_back
-
-  var run = function(){
-    var now = getTime()
-    if (now % 900 === 0){
-      i = renderboot()
-    }
-    opacitySet()
-  }
-  //Initiates above functions        Note: 15 mins === 900 secs
-
-  setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
-  //Sets an interval to run all the functions
+  opacitySet()
 }
+//Initiates above functions        Note: 15 mins === 900 secs
+
+setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
+//Sets an interval to run all the functions
