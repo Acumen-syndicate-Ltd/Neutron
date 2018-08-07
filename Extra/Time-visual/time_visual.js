@@ -256,6 +256,7 @@ var res //Will gives image resolution value based on user selection
 var lowCard = document.getElementById("lower")
 var highCard = document.getElementById("higher")
 var rawCard = document.getElementById("raw")
+//Stores HTML cards
 
 
 //+++ Global function initiation +++
@@ -304,7 +305,7 @@ var initalBoot = function(){
   var i = renderboot()
   opacitySet()
 }
-//Initiation boot finds starting images, opacity, and resolution
+//Initiation boot finds starting images and their opacity
 
 
 
