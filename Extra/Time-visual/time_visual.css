@@ -62,13 +62,47 @@ p{
 #card_layout{
   width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+#lower, #higher, #raw{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color: black;
 }
 #lower{
   width: 25%;
+  //flex: auto;
 }
 #higher{
   width: 25%;
+  //flex: auto;
 }
 #raw{
   width: 25%;
+  //flex: auto;
+}
+#lower p, #higher p, #raw p{
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+}
+#lower:hover, #higher:hover, #raw:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+#lower img, #higher img, #raw img{
+  width: 270px;
+  margin-bottom: 15px;
+}
+.card-list{
+  list-style-type: space-counter;
+}
+.notch{
+  width: 160px;
+  height: 15px;
 }

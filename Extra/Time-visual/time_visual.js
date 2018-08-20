@@ -284,35 +284,36 @@ var getRes = function(userRes){
 //Defines what resolution of images users will recieve
 
 
+
 //+++ Initial boot script +++
-  lowCard.addEventListener("click", getRes("low"))
-  highCard.addEventListener("click", getRes("high"))
-  rawCard.addEventListener("click", getRes("raw"))
-  lowCard.addEventListener("click", initalBoot())
-  highCard.addEventListener("click", initalBoot())
-  rawCard.addEventListener("click", initalBoot())
+  lowCard.addEventListener("click", function(){ getRes('low')})
+  highCard.addEventListener("click", function(){getRes("high")})
+  rawCard.addEventListener("click", function(){getRes("raw")})
+  lowCard.addEventListener("click", function(){initalBoot()})
+  highCard.addEventListener("click", function(){initalBoot()})
+  rawCard.addEventListener("click", function(){initalBoot()})
 
 var initalBoot = function(){
   document.getElementById("card_layout").remove()
+  document.getElementById("header").remove()
   var img_curr = document.createElement("img")
   var img_prev = document.createElement("img")
   img_curr.setAttribute('id', "curr_back")
   img_prev.setAttribute('id', "prev_back")
-  document.appendChild(img_curr)
-  document.appendChild(img_prev)
+  document.getElementById("images").appendChild(img_curr)
+  document.getElementById("images").appendChild(img_prev)
 
   var now = getTime()
-  var i = renderboot()
+  var i = renderboot(now)
   opacitySet()
+  setInterval(run, 1000)
 }
 //Initiation boot finds starting images and their opacity
 
 
 
-
-
 //+++ Recursive updating to page +++
-var renderboot = function(){
+var renderboot = function(now){
   var i = 0
 
   if (now === 0){    //For the midnight switch dillemma
@@ -344,11 +345,12 @@ var opacitySet = function(){
 var run = function(){
   var now = getTime()
   if (now % 900 === 0){
-    i = renderboot()
+    i = renderboot(now)
   }
   opacitySet()
 }
 //Initiates above functions        Note: 15 mins === 900 secs
 
-setInterval(run, 1000) // !!!!!!!!!! Might not work without being in function form
+
+//setInterval(run, 1000)// !!!!!!!!!! Might not work without being in function form
 //Sets an interval to run all the functions

@@ -85,6 +85,8 @@ function generation(){
   }
 }
 
+var real_password
+
 function construct(){
   var real_password = generation()
   if (real_password == "Nice try, though we have thought ahead!"){
@@ -95,8 +97,16 @@ function construct(){
   document.getElementById("button").innerHTML = "Try again"
   document.getElementById("marker").innerHTML = "Here\'s your password:"
   document.getElementById("password").innerHTML = real_password
-  document.getElementById("second_marker").innerHTML = "Open the console (F12) to view previous passwords"
+  document.getElementById("second_marker").innerHTML = "Check out your previous passwords below:"
+  passwordStore(real_password)
   }
+}
+
+var passwordStore = function(pass){
+  let newLi = document.createElement("li")
+  let prevPassword = document.createTextNode(pass)
+  newLi.appendChild(prevPassword)
+  document.getElementById("listStore").insertBefore(newLi, document.getElementById("listStore").childNodes[0])
 }
 
 

@@ -9,6 +9,11 @@
   src: url("/images/futura heavy font.ttf");
 }
 
+body{
+  margin:0;
+  padding:0;
+}
+
 /* Page title styles */
 #site-title{
   display: block;
@@ -26,40 +31,41 @@
   background-color: #9c2020;
   color: white;
 }
-#site-title:hover{
-  cursor: alias;
-}
-aside{
+header{
   background-color: white;
 }
 
 /* Navigation bar styles */
-#header a:visited {
+#nav-bar a:visited {
    color: #fff;
   font-weight: bold;
   text-decoration: underline wavy;
 }
-#header a:hover{
+#nav-bar a:hover{
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
   color: #9c2020;
   background-color: #fff;
-  cursor: alias;
 }
-#header a{
+#nav-bar a{
   float: left;
   text-align: center;
-  padding: 7px;
+  padding: 7px 0;
   font-size: 200%;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  width: 100%;
+
 }
-#header li{
+//#nav-bar li{
   display: inline-block;
   padding-left: auto;
   padding-right: auto;
 }
-#header {
-  width: 100%;
+
+#nav-bar {
+  /*width: 100%;
   z-index: 20;
   background-color: #9c2020;
   list-style-type: none;
@@ -70,13 +76,29 @@ aside{
   text-align: center;
   overflow: hidden;
   font-family: futura heavy, Arial;
-  height: 51px;
+  height: 51px;*/
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  //justify-content: space-evenly;
+  background-color: #9c2020;
+  list-style-type: none;
+  font-family: futura heavy, ubunt, san francisco, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-#header a::selection{
+#nav-bar li{
+  flex: auto;
+}
+#nav-bar li .nav-center{
+  flex-grow: 2;
+  //flex-shrink: 1;
+}
+#nav-bar a::selection{
   background-color: white;
   color: #9c2020;
 }
-#header::selection{
+#nav-bar::selection{
   background-color: white;
   color: #9c2020;
 }
