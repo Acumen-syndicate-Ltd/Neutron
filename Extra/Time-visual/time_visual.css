@@ -57,6 +57,23 @@ body{
 p{
   color: white;
 }
+page-heading{
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+page-title{
+  font-family: san francisco;
+  font-size: 100px;
+  text-align: center;
+}
+sub-page-title{
+  font-family: san francisco;
+  font-size: 30px;
+text-align: center;
+}
 
 /* Card styles */
 #card_layout{
@@ -105,4 +122,13 @@ p{
 .notch{
   width: 160px;
   height: 15px;
+}
+
+/* Selection styles */
+page-title::selection, sub-page-title::selection, #lower p::selection, #higher p::selection, #raw p::selection, #lower ul li::selection, #higher ul li::selection, #raw ul li::selection, #lower sub-title::selection, #higher sub-title::selection, #raw sub-title::selection{
+  color: white;
+  background-color: black;
+}
+#lower img::selection, #higher img::selection, #raw img::selection{
+  background-color: white;
 }

@@ -138,7 +138,7 @@ footer .column a{
 }
 footer .column a:hover{
   text-shadow: 0 0 5px white;
-  cursor: alias;
+  cursor: pointer;
 }
 footer .column a:active{
   text-shadow: 0 0 5px #ffff99,
