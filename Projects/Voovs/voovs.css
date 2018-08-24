@@ -27,11 +27,7 @@
   font-weight: normal;
   font-style: normal;
 } /* Youtube's offical and copyrighted font. Great replacement for Ubuntu font */
-/* Additional built-in fonts include:
-Serif: Most widely supported font. Good for elegant feeling content
-Sans-serif: Very widely supported and a great fallback for any normal font
-Monospace: Very widely supported monospace font. Use as a fallback for any monospace writing
-*/
+
 
 /* General styles */
 body{
@@ -40,3 +36,59 @@ body{
   padding: 0;
   font-family: ubuntu, san francisco, Ariel, sans-serif;
 }
+
+/* Top styles */
+name{
+  display: block;
+  font-family: YT sans, san francisco, futura, Ariel, sans-serif;
+  letter-spacing: 2.5px;
+  font-weight: 100;
+  text-align: center;
+  font-size: 60px;
+}
+
+/* List styles */
+.projects-list{
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+  margin: 60px 0;
+}
+.projects-list li a{
+  color: #9c2020;
+  text-decoration: none;
+  font-family: YT sans;
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* space comment*/

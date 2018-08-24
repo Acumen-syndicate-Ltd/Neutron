@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,700,800,900');
 @font-face {
   font-family: "San Francisco";
   font-weight: 400;
@@ -21,11 +22,19 @@
   font-family: "menlo";
   src: url("/images/fonts/menlo.ttf");
 }
+@font-face {
+  font-family: "YT sans";
+  src: url("/images/fonts/YT_font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*\ TODO:
-|*| Create 3 different sizes for images- low 1920x1980, high 3840x2160, raw 6000x4000
+|*| Fix our problem with going back to the site
 |*| Force a pre-render of all the images to system memory
-|*| Create a starting page with warning and options for resolution
+|*| Implement design features into cards
+|*| Get different resolution mini-images
+|*| Develop about section
 \*/
 
 /* General styles */
@@ -59,20 +68,24 @@ p{
 }
 page-heading{
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 page-title{
   font-family: san francisco;
+  font-weight: 100;
   font-size: 100px;
   text-align: center;
+  letter-spacing: 2px;
 }
 sub-page-title{
   font-family: san francisco;
+  color: rgb(0,0,0,0.7);
+  letter-spacing: 2px;
   font-size: 30px;
-text-align: center;
+  text-align: center;
 }
 
 /* Card styles */
@@ -82,7 +95,7 @@ text-align: center;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 #lower, #higher, #raw{
   display: flex;
@@ -90,34 +103,48 @@ text-align: center;
   align-items: center;
   background-color: white;
   color: black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
 }
 #lower{
   width: 25%;
   //flex: auto;
+  border-top: 6px solid rgb(88, 214, 141);
 }
 #higher{
   width: 25%;
   //flex: auto;
+  border-top: 6px solid rgb(245, 176, 65);
 }
 #raw{
   width: 25%;
   //flex: auto;
+  border-top: 6px solid rgb(192, 57, 43);
 }
 #lower p, #higher p, #raw p{
   color: black;
-  font-size: 20px;
+  margin: 15px 0;
+  font-family: sans-serif, Raleway;
+  font-weight: 800;
+  font-size: 25px;
   font-weight: 400;
 }
 #lower:hover, #higher:hover, #raw:hover{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
   cursor: pointer;
 }
 #lower img, #higher img, #raw img{
   width: 270px;
   margin-bottom: 15px;
 }
+#lower sub-title, #higher sub-title, #raw sub-title{
+  font-family: sans-serif, futura light;
+  font-size: 20px;
+  font-weight: lighter;
+}
 .card-list{
   list-style-type: space-counter;
+  padding-left: 40px;
+  align-self: flex-start;
 }
 .notch{
   width: 160px;
@@ -132,3 +159,58 @@ page-title::selection, sub-page-title::selection, #lower p::selection, #higher p
 #lower img::selection, #higher img::selection, #raw img::selection{
   background-color: white;
 }
+
+/* About styles */
+.about{
+  font-family: Raleway;
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto;
+  width: 95%;
+}
+.about about-main-heading{
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(0,0,0,.7);
+}
+.about about-heading{
+  border-top: 1px solid rgb(0,0,0,.2);
+  font-size: 25px;
+  margin-top: 20px;
+  color: rgb(0,0,0,.7);
+}
+.about about-text{
+  color: rgb(0,0,0,.7);
+  width: 85%;
+  margin-left: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Comment for spacing */

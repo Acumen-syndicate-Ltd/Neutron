@@ -295,7 +295,9 @@ var getRes = function(userRes){
 
 var initalBoot = function(){
   document.getElementById("card_layout").remove()
-  document.getElementById("header").remove()
+  //document.getElementById("header").remove()
+  document.getElementById("page-heading").remove()
+  document.getElementById("footer").remove()
   var img_curr = document.createElement("img")
   var img_prev = document.createElement("img")
   img_curr.setAttribute('id', "curr_back")

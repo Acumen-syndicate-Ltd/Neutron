@@ -12,7 +12,7 @@
   </head>
   <body>
     <!--<iframe id="header" src="/Style-sheets/header.html" width="100%" height="131" style="display: block; border: 0; object-fit:contain;"></iframe>-->
-<page-heading>
+<page-heading id="page-heading">
 <page-title>Time visual</page-title>
 <sub-page-title>The dynamic wallpaper app</sub-page-title>
 </page-heading>
@@ -28,17 +28,6 @@
   <div id="card_layout">
 
     <card id="lower">
-      <svg class="notch" view-box="0 0 160 15">
-        <path d="
-            M 00 00
-            H 160
-
-            Q 160 15 140 15
-            H 20
-            Q 00 15 00 00
-
-            Z"
-            fill="#58D68D" stroke="none" stroke-width="3"/></svg>
       <p>Low resolution</p>
       <img src="/images/pastry_3.png">
       <sub-title>1080x1920 @ 2MP</sub-title>
@@ -46,21 +35,11 @@
         <li>Quick load times</li>
         <li>Full HD resolution</li>
         <li>Recommended for most displays</li>
+        <li>Data equivelent of a hamster</li>
       </ul>
      </card>
 
     <card id="higher">
-      <svg class="notch" view-box="0 0 160 15">
-        <path d="
-            M 00 00
-            H 160
-
-            Q 160 15 140 15
-            H 20
-            Q 00 15 00 00
-
-            Z"
-            fill="#F5B041" stroke="none" stroke-width="3"/></svg>
       <p>High resolution</p>
       <img src="/images/pastry_3.png">
       <sub-title>2160x3840 @ 8MP</sub-title>
@@ -68,21 +47,11 @@
         <li>Slightly slower load times</li>
         <li>4K resolution</li>
         <li>Recommended for 4k TVs</li>
+        <li>Data equivelent of a cow</li>
       </ul>
      </card>
 
     <card id="raw">
-      <svg class="notch" view-box="0 0 160 15">
-        <path d="
-            M 00 00
-            H 160
-
-            Q 160 15 140 15
-            H 20
-            Q 00 15 00 00
-
-            Z"
-            fill="#C0392B" stroke="none" stroke-width="3"/></svg>
       <p>Original resolution</p>
       <img src="/images/pastry_3.png">
       <sub-title>4000x6000 @ 24MP</sub-title>
@@ -90,24 +59,44 @@
         <li>Very slow load times</li>
         <li>Unaltered DSLR picture</li>
         <li>Not recommended</li>
+        <li>Data equivelent of the Earth</li>
       </ul>
       </card>
 
    </div>
 
-<svg>
+<about class="about">
+  <about-main-heading>About</about-main-heading>
 
-</svg>
+  <about-heading>Function</about-heading>
+  <about-text>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+
+</about-text>
+
+  <about-heading>Design</about-heading>
+  <about-text>Some random text here</about-text>
+
+  <about-heading>Result</about-heading>
+  <about-text>Some random text here</about-text>
+
+ </about>
 
 
-<p id="clock">Big visible clock</p>
-
-<p id="difference">Difference</p>
 
 
+<!--<svg class="notch" view-box="0 0 160 15">
+  <path d="
+      M 00 00
+      H 160
 
+      Q 160 15 140 15
+      H 20
+      Q 00 15 00 00
 
-<iframe src="/style-sheets/Control/footer.html" width="100%" height="200" style="display: block; border: 0;"></iframe>
+      Z"
+      fill="#58D68D" stroke="none" stroke-width="3"/></svg>-->
+
+<iframe id="footer" src="/style-sheets/Control/footer.html" width="100%" height="200" style="display: block; border: 0;"></iframe>
   </body>
   <script type="text/javascript" src="/Projects/Voovs/Time-visual/time_visual.js"></script>
 </html>
