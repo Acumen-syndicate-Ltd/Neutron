@@ -47,7 +47,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
-#curr_back{
+#img_curr{
   position: absolute;
   z-index: -5;
   top: 0;
@@ -55,7 +55,7 @@ body{
   height: 100%;
   opacity: .5;
 }
-#prev_back{
+#img_prev{
   position: absolute;
   z-index: -10;
   top: 0;
@@ -104,6 +104,7 @@ sub-page-title{
   background-color: white;
   color: black;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  text-decoration: none;
 }
 #lower{
   width: 25%;
@@ -151,22 +152,13 @@ sub-page-title{
   height: 15px;
 }
 
-/* Selection styles */
-page-title::selection, sub-page-title::selection, #lower p::selection, #higher p::selection, #raw p::selection, #lower ul li::selection, #higher ul li::selection, #raw ul li::selection, #lower sub-title::selection, #higher sub-title::selection, #raw sub-title::selection{
-  color: white;
-  background-color: black;
-}
-#lower img::selection, #higher img::selection, #raw img::selection{
-  background-color: white;
-}
-
 /* About styles */
 .about{
   font-family: Raleway;
   display: flex;
   flex-direction: column;
   margin: 60px auto;
-  width: 95%;
+  width: 80%;
 }
 .about about-main-heading{
   display: block;
@@ -182,14 +174,27 @@ page-title::selection, sub-page-title::selection, #lower p::selection, #higher p
 }
 .about about-text{
   color: rgb(0,0,0,.7);
-  width: 85%;
-  margin-left: 10%;
+  width: 100%;
+  margin-left: 0;
 }
 
+/* Clock styles */
+#clock{
+  color: black;
+  background-color: grey;
+  padding: 0.5em;
+  opacity: 0.9;
+  text-align: center;
+}
 
-
-
-
+/* Selection styles */
+page-title::selection, sub-page-title::selection, #lower p::selection, #higher p::selection, #raw p::selection, #lower ul li::selection, #higher ul li::selection, #raw ul li::selection, #lower sub-title::selection, #higher sub-title::selection, #raw sub-title::selection{
+  color: white;
+  background-color: black;
+}
+#lower img::selection, #higher img::selection, #raw img::selection{
+  background-color: white;
+}
 
 
 
