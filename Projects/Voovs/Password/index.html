@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="icon" href="/images/favicon.ico" sizes="16x16 24x24 32x32 48x48 64x64">
+    <link rel="mask-icon" href="/images/Circle.svg" color="#9c2020">
+    <link rel="stylesheet" href="/Projects/Voovs/Password/password.css">
+
+    <meta name="description" content="Generate your own random password with custom settings!">
+    <meta charset="utf-8">
+    <title>Acumen password generator</title>
+  </head>
+  <body>
+    <iframe src="/Style-sheets/Control/header.html" width="100%" height="131" style="display: block; border: 0; object-fit:contain;"></iframe>
+
+
+
+    <h1 id="page-title">Welcome to the password generator!</h1>
+    <p class="content">Please fill in the settings below to generate your custom password</p>
+    <p class="content">We do not store your password or even send it to a server. It is generated on your personal computer. Feel free to turn off your interent connection while creating your password</p>
+
+    <div id="user_choice">
+    <div class="user_choice">
+      <input type="number" id="length" name="user_choice" value="8">
+      <label for="number">How long would you like your password? (ex. 8)</label>
+    </div>
+    <div class="user_choice">
+      <input type="checkbox" id="lowercase_letters" name="user_choice" value="lowercase_letters" checked>
+      <label for="lowercase_letters">Lowercase letters (ex. like this)</label>
+    </div>
+    <div class="user_choice">
+      <input type="checkbox" id="capital_letters" name="user_choice" value="capital_letters" checked>
+      <label for="capital_letters">Capital letters (ex. LIKE THIS)</label>
+    </div>
+    <div class="user_choice">
+      <input type="checkbox" id="numbers" name="user_choice" value="numbers" checked>
+      <label for="numbers">Numbers (ex. 123456789)</label>
+    </div>
+    <div class="user_choice">
+      <input type="checkbox" id="underscores" name="user_choice" value="underscores" checked>
+      <label for="underscores">Underscores (ex. _ _ _)</label>
+    </div>
+    <div class="user_choice">
+      <label><input type="checkbox" id="hyphens" name="user_choice" value="hyphens">Hyphens (ex. ---)</label>
+    </div>
+    <div class="user_choice">
+      <input type="checkbox" id="special" name="user_choice" value="special">
+      <label for="special">Special characters (ex. #$%*@/\!^)</label>
+    </div>
+    <!--<div class="user_choice">
+      <input type="text" id="other" name="user_choice" value="">
+      <label for="other">Any specific phrase or number combination you'd like? (ex. year1908)</label>
+    </div>-->
+     </div>
+
+    <div id="my_button"><span id="button" onclick="construct()">Submit!</span></div>
+
+    <p></p>
+
+
+    <div id="result">
+      <p id="marker"></p>
+      <p id="password"></p>
+      <p id="second_marker"></p>
+      <ul id="listStore">
+        <li></li>
+      </ul>
+    </div>
+
+    <!--
+    <p>Acumen password strength counter gives this password <span id="passwword_strength"></span></p>
+    -->
+
+    <!--
+    <p>Here's your new password:</p>
+    <p id="password">placePasswordHere</p>
+    <p>Acumen password strength counter gives this password <span id="passwword_strength"></span></p>
+    -->
+
+
+
+  <iframe src="/style-sheets/Control/footer.html" width="100%" height="200" style="display: block; border: 0;"></iframe>
+  </body>
+  <script src="/Projects/Voovs/Password/password.js"></script>
+</html>

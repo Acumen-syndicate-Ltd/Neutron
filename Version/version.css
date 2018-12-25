@@ -127,6 +127,7 @@ a{
 }
 .neutron_1221{
   background-image: url("../images/version/Neutron_1221.png");
+  background-color:rgba(0, 0, 0, 0.5);
   min-height: 300px;
 }
 .neutron_1111{

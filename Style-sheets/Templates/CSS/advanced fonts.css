@@ -21,6 +21,12 @@
   font-family: "menlo";
   src: url("/images/fonts/menlo.ttf");
 } /* Monospaced font that we use in Atom. Good for showing code blocks or simple monospace*/
+@font-face {
+  font-family: "YT sans";
+  src: url("/images/fonts/YT_font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+} /* Youtube's offical and copyrighted font. Great replacement for Ubuntu font */
 /* Additional built-in fonts include:
 Serif: Most widely supported font. Good for elegant feeling content
 Sans-serif: Very widely supported and a great fallback for any normal font

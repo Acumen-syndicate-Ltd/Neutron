@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+
+/* General styles */
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: ubuntu, san francisco, Ariel, sans-serif;
+}
+.page-title{
+  text-align: center;
+  color: #9c2020;
+  font-size: 60px;
+  font-family: ubuntu, san francisco, Ariel, sans-serif;
+}
+
+/* List styles */
+.main-list{
+  list-style-type: none;
+  margin-left: 10%;
+  line-height: 3;
+}
+.main-list li a{
+  font-size: 30px;
+  color: #9c2020;
+  text-decoration: none;
+}
+.main-list li a{
+  cursor: pointer;
+}
+.main-list li a .link{
+  text-decoration: underline;
+}
+.main-list li a .dev-status{
+  font-style: italic;
+}
+
+/* Selection styles */
+.main-list li a .link::selection, .main-list li a .dev-status::selection, .main-list::selection, .page-title::selection{
+  background-color: #9c2020;
+  color: white;
+}

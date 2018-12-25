@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,700,800,900');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+@font-face {
+  font-family: "futura light";
+  src: url("/images/fonts/futura light bt.ttf");
+}
+@font-face{
+  font-family: "futura future";
+  src: url("/images/fonts/futura.ttf");
+}
+@font-face {
+  font-family: "menlo";
+  src: url("/images/fonts/menlo.ttf");
+}
+@font-face {
+  font-family: "YT sans";
+  src: url("/images/fonts/YT_font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*\ TODO:
+|*| Fix our problem with going back to the site
+|*| Force a pre-render of all the images to system memory
+|*| Implement design features into cards
+|*| Get different resolution mini-images
+|*| Develop about section
+\*/
+
+/* General styles */
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: ubuntu, san francisco, Ariel, sans-serif;
+  //background-image: url(/images/pastry_3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#img_curr{
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+}
+#img_prev{
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+p{
+  color: white;
+}
+page-heading{
+  width: 100%;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+page-title{
+  font-family: san francisco;
+  font-weight: 100;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+sub-page-title{
+  font-family: san francisco;
+  color: rgb(0,0,0,0.7);
+  letter-spacing: 2px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* Card styles */
+#card_layout{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+#lower, #higher, #raw{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+#lower{
+  width: 25%;
+  //flex: auto;
+  border-top: 6px solid rgb(88, 214, 141);
+}
+#higher{
+  width: 25%;
+  //flex: auto;
+  border-top: 6px solid rgb(245, 176, 65);
+}
+#raw{
+  width: 25%;
+  //flex: auto;
+  border-top: 6px solid rgb(192, 57, 43);
+}
+#lower p, #higher p, #raw p{
+  color: black;
+  margin: 15px 0;
+  font-family: sans-serif, Raleway;
+  font-weight: 800;
+  font-size: 25px;
+  font-weight: 400;
+}
+#lower:hover, #higher:hover, #raw:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+#lower img, #higher img, #raw img{
+  width: 270px;
+  margin-bottom: 15px;
+}
+#lower sub-title, #higher sub-title, #raw sub-title{
+  font-family: sans-serif, futura light;
+  font-size: 20px;
+  font-weight: lighter;
+}
+.card-list{
+  list-style-type: space-counter;
+  padding-left: 40px;
+  align-self: flex-start;
+}
+.notch{
+  width: 160px;
+  height: 15px;
+}
+
+/* About styles */
+.about{
+  font-family: Raleway;
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto;
+  width: 80%;
+}
+.about about-main-heading{
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(0,0,0,.7);
+}
+.about about-heading{
+  border-top: 1px solid rgb(0,0,0,.2);
+  font-size: 25px;
+  margin-top: 20px;
+  color: rgb(0,0,0,.7);
+}
+.about about-text{
+  color: rgb(0,0,0,.7);
+  width: 100%;
+  margin-left: 0;
+}
+
+/* Clock styles */
+#clock{
+  color: black;
+  background-color: grey;
+  padding: 0.5em;
+  opacity: 0.9;
+  text-align: center;
+}
+
+/* Selection styles */
+page-title::selection, sub-page-title::selection, #lower p::selection, #higher p::selection, #raw p::selection, #lower ul li::selection, #higher ul li::selection, #raw ul li::selection, #lower sub-title::selection, #higher sub-title::selection, #raw sub-title::selection{
+  color: white;
+  background-color: black;
+}
+#lower img::selection, #higher img::selection, #raw img::selection{
+  background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Comment for spacing */

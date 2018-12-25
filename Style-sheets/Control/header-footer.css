@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "futura heavy";
+  src: url("/images/futura heavy font.ttf");
+}
+
+body{
+  margin:0;
+  padding:0;
+}
+
+/* Page title styles */
+#site-title{
+  display: block;
+  text-decoration: none;
+  font-family: futura heavy, Arial;
+  font-size: 40px;
+  color: #9c2020;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  padding: 15px 0;
+  margin: 0;
+}
+#site-title::selection{
+  background-color: #9c2020;
+  color: white;
+}
+header{
+  background-color: white;
+}
+
+/* Navigation bar styles */
+#nav-bar a:visited {
+   color: #fff;
+  font-weight: bold;
+  text-decoration: underline wavy;
+}
+#nav-bar a:hover{
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  color: #9c2020;
+  background-color: #fff;
+}
+#nav-bar a{
+  float: left;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 200%;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  width: 100%;
+
+}
+//#nav-bar li{
+  display: inline-block;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+#nav-bar {
+  /*width: 100%;
+  z-index: 20;
+  background-color: #9c2020;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  font-family: futura heavy, Arial;
+  height: 51px;*/
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  //justify-content: space-evenly;
+  background-color: #9c2020;
+  list-style-type: none;
+  font-family: futura heavy, ubunt, san francisco, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+#nav-bar li{
+  flex: auto;
+}
+#nav-bar li .nav-center{
+  flex-grow: 2;
+  //flex-shrink: 1;
+}
+#nav-bar a::selection{
+  background-color: white;
+  color: #9c2020;
+}
+#nav-bar::selection{
+  background-color: white;
+  color: #9c2020;
+}
+
+/* Footer general styles */
+footer{
+  background-color: #9c2020;
+  font-family: futura heavy, Arial;
+}
+footer .container {
+  display: flex;
+  height: 200px;
+}
+footer .column {
+  width: 33%;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  /* border: 1px solid red; */
+}
+
+/* Niche footer styles */
+footer .column img {
+  height: 80%;
+  margin: auto;
+  display: block;
+}
+footer .column #copy_right{
+  position: relative;
+  bottom: 0;
+  font-size: 10px;
+  text-align: center;
+}
+footer .column a{
+  color: white;
+  display: block;
+}
+footer .column a:hover{
+  text-shadow: 0 0 5px white;
+  cursor: pointer;
+}
+footer .column a:active{
+  text-shadow: 0 0 5px #ffff99,
+  0 0 5px #ffff99,
+  0 0 5px #ffff99;
+}
+footer .column p {
+  color: white;
+  font-size: 20px;
+  font-family: futura heavy, Arial;
+  font-weight: bold;
+  text-align: left;
+}
+footer a::selection, footer img::selection, footer p::selection, footer::selection, footer br::selection{
+  background-color: white;
+  color: #9c2020;
+}

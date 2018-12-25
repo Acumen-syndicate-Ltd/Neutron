@@ -92,7 +92,7 @@ body{
   height: 50px;
 }
 #cover-span:hover{
-  cursor: crosshair;
+  cursor: default;
 }
 #cover-span::selection{
   color: white;
